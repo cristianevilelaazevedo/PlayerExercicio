@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.Toast;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     MediaPlayer player;
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void play(View v) {
         if (player == null) {
-            player = MediaPlayer.create( context: this, R.raw.enya_caribbean_blue);
+            player = MediaPlayer.create(  this, R.raw.enya_caribbean_blue);
             player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         if (player != null) {
             player.release();
             player = null;
-            Toast.makeText(context: this, text: "MediaPlayer released", Toast.LENGTH_SHORT).show();
+            Toast.makeText( this,  "MediaPlayer released", Toast.LENGTH_SHORT).show();
         }
     }
 
